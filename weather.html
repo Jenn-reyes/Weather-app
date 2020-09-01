@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="src/style.css">
+<script src="https://kit.fontawesome.com/a0a6318529.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+  </head>
+<body>
+  <div class="container">
+    <span class="searchBar"> 
+    <input type="search" id="search-input" placeholder="City, State or ZIp" autocomplete="off">
+    <button type="submit" class="btn btn-outline-info" id="search-button"> Search </button>
+    </span>
+</input>
+    <div class="mainCard">
+      <div class="card-body">
+        <h1 id="current-temperature"> 
+          <div class="emoji">  ☀️</div> 
+          <br/>
+          85℉</h1>
+        <h2 class="current-city"> San Jose, CA. </h2> 
+        <h2 id="current-date-time"> Saturday 13:00</h2>
+        <h4> Today: Sunny currently. The high will be 93℉. Clear tonight with a low of 62℉.
+        </h4>
+      </div>
+    </div>
+<br>
+<br>
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <br>
+     <p> Sunday</p> 
+      <hr>
+      <i class="fas fa-sun " style="font-size: 2em; color:  #FEC500;"></i>
+    <p>
+      Sunny
+      <br>
+      Hi: 93℉ 
+      <br>
+      Lo: 60℉
+    </p>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <br>
+      <p>Monday</p> 
+      <hr>
+      <i class="fas fa-cloud-sun " style="font-size: 2em; color: grey"></i>
+    <p>
+      Partly Cloudy
+      <br>
+      Hi: 91℉ 
+      <br>
+      Lo: 58℉
+    </p>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <br>
+      <p>Tuesday</p> 
+      <hr>
+      <i class="fas fa-cloud-sun " style="font-size: 2em; color: grey"></i>
+    <p>
+      Partly Cloudy
+      <br>
+      Hi: 87℉ 
+      <br>
+      Lo: 58℉
+    </p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <br>
+      <p>Wednesday</p> 
+      <hr>
+      <i class="fas fa-sun " style="font-size: 2em; color:  #FEC500;"></i>
+    <p>
+      Partly Cloudy
+      <br>
+      Hi: 87℉ 
+      <br>
+      Lo: 57℉
+    </p>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <br>
+      <p>Thursday </p> 
+      <hr>
+      <i class="fas fa-sun " style="font-size: 2em; color:  #FEC500;"></i>
+    <p>
+      Partly Cloudy
+      <br>
+      Hi: 89℉ 
+      <br>
+      Lo: 57℉
+    </p>
+    </div>
+  </div>
+</div>
+
+  </div>
+    
+  <script src="src/weather.js"></script>
+
+
+  <h5>Weather app created by <a href="https://www.linkedin.com/in/jennifer-arcia-reyes-5493054b/" class="href">Jennifer Reyes</a></h5>
+</body>
+</html>
