@@ -1,120 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<link rel="stylesheet" href="src/style.css">
-<script src="https://kit.fontawesome.com/a0a6318529.js" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/a0a6318529.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
-<body>
-  <div class="container">
-    <span class="searchBar"> 
-    <input type="search" id="search-input" placeholder="City, State or ZIp" autocomplete="off">
-    <button type="submit" class="btn btn-outline-info" id="search-button"> Search </button>
-    </span>
-</input>
-    <div class="mainCard">
-      <div class="card-body">
-        <h1 id="current-temperature"> 
-          <div class="emoji">  ☀️</div> 
-          <br/>
-          85℉</h1>
-        <h2 class="current-city"> San Jose, CA. </h2> 
-        <h2 id="current-date-time"> Saturday 13:00</h2>
-        <h4> Today: Sunny currently. The high will be 93℉. Clear tonight with a low of 62℉.
-        </h4>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <form class="city-search-form" id="city-search-form">
+            <div class="row form">
+              <input
+                type="text"
+                class="form-control col-9"
+                id="city-search-input"
+                placeholder="Search city..."
+                autofocus="on"
+                autocomplete="off"
+              />
+              <button type="submit" class="form-control col-1 search-btn">
+                <i class="fas fa-search"></i>
+              </button>
+              <button
+                type="button"
+                class="form-control col-1 location-btn"
+                id="location-btn"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+              </button>
+            </div>
+          </form>
+          <div class="row">
+            <div class="col-5 today">
+              <h2 id="today">TODAY</h2>
+            </div>
+            <div class="col-7 location">
+              <h2 id="location"></h2>
+            </div>
+          </div>
+          <div class="row date-country">
+            <div class="col-6 today-date">
+              <p id="weather-description" class="weather-description"></p>
+              <p id="current-date-time"></p>
+            </div>
+            <div class="col-6 location">
+              <p id="country"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-5 today-temp-all">
+              <h1>
+                <span id="current-temp">28</span>
+                <span class="units">
+                  <a href="#" class="change-temp-btn" id="celsius-link"> °C </a>
+                  |
+                  <a href="#" class="change-temp-btn" id="farenheit-link">
+                    °F
+                  </a>
+                </span>
+              </h1>
+            </div>
+            <div class="col-3">
+              <span style="color: rgb(199, 194, 194);">
+                <i class="fas fa-smog fa-8x"></i
+              ></span>
+            </div>
+            <div class="col-4 weather-stats-col">
+              <ul class="weather-stats">
+                <li>
+                  Humidity
+                  <strong id="humidity"> </strong>
+                </li>
+                <li>
+                  Wind
+                  <strong id="wind"> </strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <hr class="hr-1" />
+          <div class="row">
+            <div class="col-4 week-day">
+              <h3 id="day-1">Mon</h3>
+            </div>
+            <div class="col-3 week-icon">
+              <span style="color: #e2ebf4;"
+                ><i class="fas fa-cloud-sun fa-3x"></i
+              ></span>
+            </div>
+            <div class="col-5 week-temp">
+              <h3>
+                15° |
+                <strong> 32° </strong>
+              </h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 week-day">
+              <h3 id="day-2">Tue</h3>
+            </div>
+            <div class="col-3 week-icon">
+              <span style="color: #e2ebf4;"
+                ><i class="fas fa-cloud-sun fa-3x"></i
+              ></span>
+            </div>
+            <div class="col-5 week-temp">
+              <h3>
+                17° |
+                <strong> 32° </strong>
+              </h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 week-day">
+              <h3 id="day-3">Wed</h3>
+            </div>
+            <div class="col-3 week-icon">
+              <span style="color: #e2ebf4;"
+                ><i class="fas fa-cloud-sun fa-3x"></i
+              ></span>
+            </div>
+            <div class="col-5 week-temp">
+              <h3>
+                17° |
+                <strong> 33° </strong>
+              </h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 week-day">
+              <h3 id="day-4">Thu</h3>
+            </div>
+            <div class="col-3 week-icon">
+              <span style="color: #e2ebf4;"
+                ><i class="fas fa-cloud-sun fa-3x"></i
+              ></span>
+            </div>
+            <div class="col-5 week-temp">
+              <h3>
+                17° |
+                <strong> 33° </strong>
+              </h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 week-day">
+              <h3 id="day-5">Fri</h3>
+            </div>
+            <div class="col-3 week-icon">
+              <span style="color: #e2ebf4;"
+                ><i class="fas fa-cloud-sun fa-3x"></i
+              ></span>
+            </div>
+            <div class="col-5 week-temp">
+              <h3>
+                17° |
+                <strong> 31° </strong>
+              </h3>
+            </div>
+          </div>
+          <hr class="hr-2" />
+        </div>
       </div>
     </div>
-<br>
-<br>
-<div class="row">
-  <div class="col">
-    <div class="card">
-      <br>
-     <p> Sunday</p> 
-      <hr>
-      <i class="fas fa-sun " style="font-size: 2em; color:  #FEC500;"></i>
-    <p>
-      Sunny
-      <br>
-      Hi: 93℉ 
-      <br>
-      Lo: 60℉
-    </p>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <br>
-      <p>Monday</p> 
-      <hr>
-      <i class="fas fa-cloud-sun " style="font-size: 2em; color: grey"></i>
-    <p>
-      Partly Cloudy
-      <br>
-      Hi: 91℉ 
-      <br>
-      Lo: 58℉
-    </p>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <br>
-      <p>Tuesday</p> 
-      <hr>
-      <i class="fas fa-cloud-sun " style="font-size: 2em; color: grey"></i>
-    <p>
-      Partly Cloudy
-      <br>
-      Hi: 87℉ 
-      <br>
-      Lo: 58℉
-    </p>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-6">
-    <div class="card">
-      <br>
-      <p>Wednesday</p> 
-      <hr>
-      <i class="fas fa-sun " style="font-size: 2em; color:  #FEC500;"></i>
-    <p>
-      Partly Cloudy
-      <br>
-      Hi: 87℉ 
-      <br>
-      Lo: 57℉
-    </p>
-    </div>
-  </div>
-  <div class="col-6">
-    <div class="card">
-      <br>
-      <p>Thursday </p> 
-      <hr>
-      <i class="fas fa-sun " style="font-size: 2em; color:  #FEC500;"></i>
-    <p>
-      Partly Cloudy
-      <br>
-      Hi: 89℉ 
-      <br>
-      Lo: 57℉
-    </p>
-    </div>
-  </div>
-</div>
 
-  </div>
-    
-  <script src="src/weather.js"></script>
+    <script src="src/index.js"></script>
 
-
-  <h5>Weather app created by <a href="https://www.linkedin.com/in/jennifer-arcia-reyes-5493054b/" class="href">Jennifer Reyes</a></h5>
-</body>
+    <footer>
+      Weather app created by
+      <a
+        href="https://www.linkedin.com/in/jennifer-arcia-reyes-5493054b/"
+        class="href"
+        >Jennifer Reyes</a
+      >
+    </footer>
+  </body>
 </html>

@@ -1,54 +1,93 @@
-body{
-background: #89c9b8;
-}
-h1 {
-    
-color: #FEC500;
-font-size: 70px;
-line-height: 50px;
-}
-
-h1, h2, h4, p {
+body {
+    background-image: url("img/blueseaturtle.jpg");
+    background-size: cover;
+    display: block;
+  }
+  h1 {
+    color: #e5fe00;
+    font-size: 70px;
+    line-height: 50px;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
     text-align: center;
-    font-family:  'Yeseva One', cursive;
+    font-family: "Yeseva One", cursive;
     font-weight: 500;
-}
-h2, h4, p {
-    
-    color: #dddddd;
-}
-p {
+  }
+  h2,
+  h3,
+  h4,
+  p {
+    color: rgb(23, 88, 218);
+  }
+  p {
     font-size: 20px;
-}
-.emoji {    
-    font-size: 150px; 
+  }
+  h5 {
+    color: white;
+  }
+  ul,
+  a,
+  footer {
+    list-style: none;
+    color: #e5fe00;
+    font-family: "yeseva one", cursive;
+    font-size: 22px;
+  }
+  footer {
+    text-align: center;
+  }
+  a {
+    text-decoration: underline;
+  }
+  li:before {
+    content: "⚡";
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  hr {
+    background-color: #e5fe00;
+    height: 10px;
+  }
+  .emoji {
+    font-size: 150px;
     line-height: 70px;
-}
-
-.searchBar {
+  }
+  
+  .searchBar {
     position: relative;
     text-align: center;
     display: block;
     padding: 10px 0px;
-}
-.row{
+  }
+  .row {
     padding: 40px;
-
-}
-.card, .mainCard {
-    border: 3px solid #3E9EB6;
-    background: #d9adad;
-
-}
-.card{
+  }
+  .card,
+  .mainCard {
+    border: 3px solid #3e9eb6;
+    background: linear-gradient(
+      to top,
+      rgba(253, 219, 146, 0.6),
+      rgba(209, 253, 255, 0.75)
+    );
+  }
+  .card {
     border-radius: 30px;
     text-align: center;
-
-    
-}
-
-.mainCard {
-    
+  }
+  
+  .mainCard {
     border-radius: 50%;
     padding: 75px;
-}
+  }
+  
+  .units .change-temp-btn {
+    font-size: 25px;
+    color: #fff;
+  }
+  
