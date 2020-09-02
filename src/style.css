@@ -1,0 +1,54 @@
+body{
+background: #89c9b8;
+}
+h1 {
+    
+color: #FEC500;
+font-size: 70px;
+line-height: 50px;
+}
+
+h1, h2, h4, p {
+    text-align: center;
+    font-family:  'Yeseva One', cursive;
+    font-weight: 500;
+}
+h2, h4, p {
+    
+    color: #dddddd;
+}
+p {
+    font-size: 20px;
+}
+.emoji {    
+    font-size: 150px; 
+    line-height: 70px;
+}
+
+.searchBar {
+    position: relative;
+    text-align: center;
+    display: block;
+    padding: 10px 0px;
+}
+.row{
+    padding: 40px;
+
+}
+.card, .mainCard {
+    border: 3px solid #3E9EB6;
+    background: #d9adad;
+
+}
+.card{
+    border-radius: 30px;
+    text-align: center;
+
+    
+}
+
+.mainCard {
+    
+    border-radius: 50%;
+    padding: 75px;
+}
