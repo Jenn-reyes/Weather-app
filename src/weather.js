@@ -64,6 +64,7 @@ let celsiusTemp= null;
 
 let fahrenheitElement= document.querySelector("#fahrenheit");
 fahrenheitElement.addEventListener("click", displayFahrenheit);
+
 function searchCity(city) {
   let units = "metric";
   let apiKey = "18abee11a17d43ab554892ec0dffc380";
