@@ -22,6 +22,7 @@ function displayWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = temperature;
+celsiusTemp= response.data.main.temp;
 
   let city = response.data.name;
   let cityHeading = document.querySelector("#location");
@@ -51,6 +52,15 @@ function displayFahrenheit(event){
   let temperatureElement= document.querySelector("#current-temp");
   temperature.innerHTML=Math.round(fahrenheitTemp);
 }
+
+function displayCelsius(event){
+  event.preventDefault();
+  let celsiusTemp= ("temperatureElement.innerHTML" * 9)/5+32;
+  let temperatureElement= document.querySelector("#current-temp");
+  temperature.innerHTML=Math.round(celsiusTemp);
+}
+
+let celsiusTemp= null;
 
 let fahrenheitElement= document.querySelector("#fahrenheit");
 fahrenheitElement.addEventListener("click", displayFahrenheit);
