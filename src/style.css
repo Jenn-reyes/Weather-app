@@ -91,3 +91,10 @@ body {
     color: #fff;
   }
   
+  .units .active {
+    color: black;
+    cursor: default;
+  }
+   .units .active:hoover {
+     text-decoration: none;
+   }
