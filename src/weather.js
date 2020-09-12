@@ -45,6 +45,15 @@ function displayWeather(response) {
   descriptionHeading.innerHTML = description;
 }
 
+function displayFahrenheit(event){
+  event.preventDefault();
+  let fahrenheitTemp= ("temperatureElement.innerHTML" * 9)/5+32;
+  let temperatureElement= document.querySelector("#current-temp");
+  temperature.innerHTML=Math.round(fahrenheitTemp);
+}
+
+let fahrenheitElement= document.querySelector("#fahrenheit");
+fahrenheitElement.addEventListener("click", displayFahrenheit);
 function searchCity(city) {
   let units = "metric";
   let apiKey = "18abee11a17d43ab554892ec0dffc380";
