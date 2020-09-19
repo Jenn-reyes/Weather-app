@@ -42,6 +42,7 @@ function displayWeather(response) {
 
   celsiusTemp= response.data.main.temp;
   
+  currentTemp.innerHTML= math.round(celsiusTemp);
   cityHeading.innerHTML = city.toUpperCase();
   countryHeading.innerHTML = country;
   humidityHeading.innerHTML = `${humidity}%`;
