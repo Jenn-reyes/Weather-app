@@ -22,31 +22,32 @@ dateTime.innerHTML = `${day} ${hour}:${minute}`;
 function displayWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = temperature;
-celsiusTemp= response.data.main.temp;
-
+  
   let city = response.data.name;
   let cityHeading = document.querySelector("#location");
-  cityHeading.innerHTML = city.toUpperCase();
-
+  
   let country = response.data.sys.country;
   let countryHeading = document.querySelector("#country");
-  countryHeading.innerHTML = country;
-
+  
   let humidity = response.data.main.humidity;
   let humidityHeading = document.querySelector("#humidity");
-  humidityHeading.innerHTML = `${humidity}%`;
-
+  
   let wind = Math.round(response.data.wind.speed * 2.237);
   let windHeading = document.querySelector("#wind");
-  windHeading.innerHTML = `${wind} mph`;
-
+  
   let description = response.data.weather[0].description;
   let descriptionHeading = document.querySelector("#weather-description");
+  
+  let iconElement = document.querySelector("#weather-icon");
 
+  celsiusTemp= response.data.main.temp;
+  
+  cityHeading.innerHTML = city.toUpperCase();
+  countryHeading.innerHTML = country;
+  humidityHeading.innerHTML = `${humidity}%`;
+  windHeading.innerHTML = `${wind} mph`;
   descriptionHeading.innerHTML = description;
 
-let iconElement = document.querySelector("#weather-icon");
 iconElement.setAttribute("src",  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`) ;
 iconElement.setAttribute("alt", response.data.weather[0].description);
 }
@@ -91,15 +92,18 @@ searchForm.addEventListener("submit", handleSubmit);
 let geoButton = document.querySelector("#location-btn");
 geoButton.addEventListener("click", getGeolocation);
 
-searchCity("San Jose");
 
 function showFahrenheitTemp(event){
   event.preventDefault();
   let temperatureElement = document.querySelector("#current-temp");
-  let fahrenheitTemperature = ( temperatureElement.innerHTML * 9 ) / 5 + 32;
+  let fahrenheitTemperature = ( celsiusTemp * 9 ) / 5 + 32;
   temperatureElement.innerHTML= Math.round(fahrenheitTemperature);
 }
 
+let celsiusTemp= null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+
+searchCity("San Jose");
