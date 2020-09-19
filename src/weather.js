@@ -85,14 +85,14 @@ function retrievePosition(position) {
 
 function getGeolocation() {
   navigator.geolocation.getCurrentPosition(retrievePosition);
-}
+
 
 let searchForm = document.querySelector("#city-search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 let geoButton = document.querySelector("#location-btn");
 geoButton.addEventListener("click", getGeolocation);
-
+}
 
 function showFahrenheitTemp(event){
   event.preventDefault();
