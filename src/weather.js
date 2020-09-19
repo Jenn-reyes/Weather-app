@@ -105,7 +105,7 @@ function showCelsiusTemp(event)
 {
   event.preventDefault();
   let temperatureElement = document.querySelector("#current-temp");
-temperatureElement= celsiusTemp;
+temperatureElement.innerHTML= celsiusTemp;
 
 }
 
