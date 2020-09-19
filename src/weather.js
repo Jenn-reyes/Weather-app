@@ -51,24 +51,9 @@ iconElement.setAttribute("src",  `http://openweathermap.org/img/wn/${response.da
 iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-function displayFahrenheit(event){
-  event.preventDefault();
-  let fahrenheitTemp= ("temperatureElement.innerHTML" * 9)/5+32;
-  let temperatureElement= document.querySelector("#current-temp");
-  temperature.innerHTML=Math.round(fahrenheitTemp);
-}
 
-function displayCelsius(event){
-  event.preventDefault();
-  let celsiusTemp= ("temperatureElement.innerHTML" * 9)/5+32;
-  let temperatureElement= document.querySelector("#current-temp");
-  temperature.innerHTML=Math.round(celsiusTemp);
-}
 
-let celsiusTemp= null;
 
-let fahrenheitElement= document.querySelector("#fahrenheit");
-fahrenheitElement.addEventListener("click", displayFahrenheit);
 
 function searchCity(city) {
   let units = "metric";
@@ -107,3 +92,14 @@ let geoButton = document.querySelector("#location-btn");
 geoButton.addEventListener("click", getGeolocation);
 
 searchCity("San Jose");
+
+function showFahrenheitTemp(event){
+  event.preventDefault();
+  let fahrenheitTemperature = ( 22 * 9 / 5) + 32;
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML= Math.round(fahrenheitTemperature);
+}
+
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
