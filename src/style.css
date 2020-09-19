@@ -99,6 +99,7 @@ body {
      text-decoration: none;
    }
 
-   img .weather-icon {
-     width: 20px;
+   img  {
+     max-width: 100%;
+     height: auto;
    }
