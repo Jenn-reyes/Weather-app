@@ -1,4 +1,4 @@
-//feature #1 display current date and time
+
 let currentDateTime = new Date();
 
 let dateTime = document.querySelector("#current-date-time");
@@ -19,7 +19,7 @@ let minute = currentDateTime.getMinutes();
 dateTime.innerHTML = `${day} ${hour}:${minute}`;
 
 function displayWeather(response) {
-  console.log(response.data);
+  
   let temperature = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = temperature;
