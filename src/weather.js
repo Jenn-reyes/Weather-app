@@ -20,6 +20,7 @@ dateTime.innerHTML = `${day} ${hour}:${minute}`;
 
 //DISPLAYING THE CURRENT WEATHER
 function displayWeather(response) {
+  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = temperature;
@@ -47,7 +48,7 @@ celsiusTemp= response.data.main.temp;
   descriptionHeading.innerHTML = description;
 
 let iconElement = document.querySelector("#weather-icon");
-iconElement.setAttribute("src",  `http://openweathermap.org/img/wn/10d@2x.png`) ;
+iconElement.setAttribute("src",  `http://openweathermap.org/img/wn/${}@2x.png`) ;
 
 }
 
