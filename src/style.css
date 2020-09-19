@@ -99,6 +99,6 @@ body {
      text-decoration: none;
    }
 
-   .weather-icon {
-     size: 100px;
+   img .weather-icon {
+     width: 20px;
    }
