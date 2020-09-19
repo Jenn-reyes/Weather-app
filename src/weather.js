@@ -47,7 +47,7 @@ celsiusTemp= response.data.main.temp;
   descriptionHeading.innerHTML = description;
 
 let iconElement = document.querySelector("#weather-icon");
-iconElement.setAttribute("src",  `http://openweathermap.org/img/wn/${}@2x.png`) ;
+iconElement.setAttribute("src",  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`) ;
 
 }
 
