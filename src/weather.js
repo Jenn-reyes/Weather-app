@@ -101,10 +101,21 @@ function showFahrenheitTemp(event){
   temperatureElement.innerHTML= Math.round(fahrenheitTemperature);
 }
 
+function showCelsiusTemp(event)
+{
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+temperatureElement= celsiusTemp;
+
+}
+
 let celsiusTemp= null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsiusTemp);
 
 
 searchCity("San Jose");
