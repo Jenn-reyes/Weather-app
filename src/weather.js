@@ -96,7 +96,7 @@ searchCity("San Jose");
 function showFahrenheitTemp(event){
   event.preventDefault();
   let temperatureElement = document.querySelector("#current-temp");
-  let fahrenheitTemperature = ( temperatureElement.innerHTML * 9 / 5) + 32;
+  let fahrenheitTemperature = ( temperatureElement.innerHTML * 9 ) / 5 + 32;
   temperatureElement.innerHTML= Math.round(fahrenheitTemperature);
 }
 
