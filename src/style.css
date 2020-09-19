@@ -98,3 +98,7 @@ body {
    .units .active:hoover {
      text-decoration: none;
    }
+
+   .weather-icon {
+     size: 100px;
+   }
