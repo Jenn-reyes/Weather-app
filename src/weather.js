@@ -60,25 +60,27 @@ iconElement.setAttribute("src",  `http://openweathermap.org/img/wn/${response.da
 iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-function displayForcast(response){
-  let forcastElement= document.querySelector("#forcast");
-  let forcast = null;
-  for (let index = 0; index <6; index ++){
-    forcast= response.data.list[index];
+function dispalyForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index ++){
+    forecast= response.data.list[index];
  
-  forcastElement.innerHTML= `
+  forecastElement.innerHTML += `
   <div class="col-4 week-day">
     <h3>
-    ${formatHours(forcast.dt * 1000)}
+    ${formatHours(forecast.dt * 1000)}
     </h3>
   </div>
   <div class="col-3 week-icon">
-<img src="http://openweathermap.org/img/wn/${forcast.weather[0].icon}@2x.png"
-  </div>
-  <div class="col-5 week-temp">
+<img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+  
+
     <h3>
-      ${Math.round(forcast.main.temp_min)}° |
-      <strong> ${Math.round(forcast.main.temp_max)}°</strong>
+      ${Math.round(forecast.main.temp_min)}° |
+      <strong> ${Math.round(forecast.main.temp_max)}°</strong>
     </h3>
   </div>
 `;
@@ -95,7 +97,7 @@ function searchCity(city) {
 
   axios.get(apiUrl).then(displayWeather);
 
-  apiUrl= `https://api.openweathermap.org/data/2.5/forecast?q=${city},us&mode=xml&appid=${apiKey}&units=metric`;
+  apiUrl= `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(displayForcast);
 }
 
