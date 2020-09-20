@@ -86,13 +86,16 @@ body {
     padding: 75px;
   }
   
-  
+  .units .change-temp-btn .active{
+    font-size: 25px;
+    color: #fff;
+  }
   
   .units .active {
     color: black;
     cursor: default;
   }
-   .units .active:hoover {
+   .units .change-temp-btn .active:hoover {
      text-decoration: none;
    }
 
