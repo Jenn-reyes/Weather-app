@@ -54,8 +54,8 @@ iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function displayForcast(response){
-  let forcastElement= document.querySelector("#weather-forcast");
-  let forcast = response.data.list[0];
+  let forcastElement= document.querySelector("#forcast");
+  
   forcastElement.innerHTML= `
   <div class="col-4 week-day">
     <h3 id="day-1">12:00</h3>
