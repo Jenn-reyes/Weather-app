@@ -93,7 +93,7 @@ body {
   }
   
   
-   .units .change-temp-btn .active:hoover {
+   .units .change-temp-btn :hoover {
      text-decoration: none;
    }
 
