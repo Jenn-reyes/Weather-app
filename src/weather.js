@@ -97,7 +97,7 @@ geoButton.addEventListener("click", getGeolocation);
 function showFahrenheitTemp(event){
   event.preventDefault();
   let temperatureElement = document.querySelector("#current-temp");
-  celsiusLink.classList.remove("active"):
+  celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = ( celsiusTemp * 9 ) / 5 + 32;
   temperatureElement.innerHTML= Math.round(fahrenheitTemperature);
