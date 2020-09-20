@@ -55,20 +55,18 @@ iconElement.setAttribute("alt", response.data.weather[0].description);
 
 function displayForcast(response){
   let forcastElement= document.querySelector("#forcast");
-  
+  let forcast = response.data.list[0];
   forcastElement.innerHTML= `
   <div class="col-4 week-day">
     <h3 id="day-1">12:00</h3>
   </div>
   <div class="col-3 week-icon">
-    <span style="color: #e2ebf4;"
-      ><i class="fas fa-cloud-sun fa-3x"></i
-    ></span>
+<img src="http://openweathermap.org/img/wn/${forcast.weather[0].icon}@2x.png"
   </div>
   <div class="col-5 week-temp">
     <h3>
-      15° |
-      <strong> ${forcast.main.temp_max}</strong>
+      ${Math.round(forcast.main.temp_min)}° |
+      <strong> ${Math.round(forcast.main.temp_max)}°</strong>
     </h3>
   </div>
 `;
