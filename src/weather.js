@@ -47,7 +47,7 @@ function displayWeather(response) {
   countryHeading.innerHTML = country;
   humidityHeading.innerHTML = `${humidity}%`;
   windHeading.innerHTML = `${wind} mph`;
-  descriptionHeading.innerHTML = description.toUpperCase();
+  descriptionHeading.innerHTML = description.charAt(0).toUpperCase();
 
 iconElement.setAttribute("src",  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`) ;
 iconElement.setAttribute("alt", response.data.weather[0].description);
