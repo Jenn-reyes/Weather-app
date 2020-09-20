@@ -53,7 +53,9 @@ iconElement.setAttribute("src",  `http://openweathermap.org/img/wn/${response.da
 iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-
+function displayForcast(response){
+console.log(response.data);
+}
 
 
 
@@ -64,6 +66,9 @@ function searchCity(city) {
   let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(displayWeather);
+
+  apiUrl= `https://api.openweathermap.org/data/2.5/forecast?q=${city},us&mode=xml&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayForcast);
 }
 
 function handleSubmit(event) {
