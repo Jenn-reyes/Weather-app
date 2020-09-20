@@ -93,5 +93,8 @@ body {
   }
   
   
-  
+   .units .change-temp-btn .active:hoover {
+     text-decoration: none;
+   }
+
    
