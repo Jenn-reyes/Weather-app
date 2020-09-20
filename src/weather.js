@@ -18,6 +18,13 @@ let minute = currentDateTime.getMinutes();
 
 dateTime.innerHTML = `${day} ${hour}:${minute}`;
 
+function formatHours(timestamp){
+  let hour = currentDateTime.getHours();
+let minute = currentDateTime.getMinutes();
+  return `${hours} : ${minutes}`;
+}
+
+
 //DISPLAYING THE CURRENT WEATHER
 function displayWeather(response) {
   let temperature = Math.round(response.data.main.temp);
@@ -58,7 +65,9 @@ function displayForcast(response){
   let forcast = response.data.list[0];
   forcastElement.innerHTML= `
   <div class="col-4 week-day">
-    <h3 id="day-1">12:00</h3>
+    <h3>
+    ${formatHours(forcast.dt * 1000)}
+    </h3>
   </div>
   <div class="col-3 week-icon">
 <img src="http://openweathermap.org/img/wn/${forcast.weather[0].icon}@2x.png"
