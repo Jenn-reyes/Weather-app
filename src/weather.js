@@ -62,7 +62,10 @@ iconElement.setAttribute("alt", response.data.weather[0].description);
 
 function displayForcast(response){
   let forcastElement= document.querySelector("#forcast");
-  let forcast = response.data.list[0];
+  let forcast = null;
+  for (let index = 0; index <6; index ++){
+    forcast= response.data.list[index];
+ 
   forcastElement.innerHTML= `
   <div class="col-4 week-day">
     <h3>
@@ -79,7 +82,7 @@ function displayForcast(response){
     </h3>
   </div>
 `;
-
+}
 }
 
 
