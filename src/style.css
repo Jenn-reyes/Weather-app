@@ -89,12 +89,10 @@ body {
   .units .change-temp-btn {
     font-size: 25px;
     color: #fff;
+    text-decoration: none;
   }
   
-  .units .active {
-    color: black;
-    cursor: default;
-  }
+  
    .units .change-temp-btn .active:hoover {
      text-decoration: none;
    }
